@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   get '/suppliers/new' => 'suppliers#new', as: :new_supplier
 
   post '/suppliers' => 'suppliers#create'
+
+  resources :suppliers do
+    resources :supplier_items
+  end
 end

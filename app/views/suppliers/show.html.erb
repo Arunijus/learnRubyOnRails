@@ -1,12 +1,11 @@
 <h3><%= @supplier.name %></h3>
 <p>Address: <%= @supplier.address %></p>
-<br />
 <p>Items:</p>
 <table>
   <thead>
     <tr>
-      <th>Ean</th>
-      <th>Description</th>
+      <th style="text-align: left;">Ean</th>
+      <th style="text-align: left;">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -18,3 +17,19 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<hr>
+<h3>Add a supplier item:</h3>
+<%= form_for([@supplier, @supplier.supplier_items.build]) do |f| %>
+    <p>
+      <%= f.label :ean %><br>
+      <%= f.text_field :ean %>
+    </p>
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.submit "Add", :class => "btn" %>
+    </p>
+<% end %>

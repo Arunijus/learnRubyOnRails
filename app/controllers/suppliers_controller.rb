@@ -13,7 +13,9 @@ class SuppliersController < ApplicationController
   end
 
   def create
-    if Supplier.create(supplier_params)
+    @supplier = Supplier.new(supplier_params)
+
+    if @supplier.save
       redirect_to(:action => 'index')
     else
       render 'new'
