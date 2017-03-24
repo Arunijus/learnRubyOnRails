@@ -1,0 +1,20 @@
+<h2><%= @supplier.name %></h2>
+<p>Address: <%= @supplier.address %></p>
+<br />
+<p>Items:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Ean</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @supplier_items.each do |si| %>
+      <tr>
+        <td><%= si.ean %></td>
+        <td><%= si.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

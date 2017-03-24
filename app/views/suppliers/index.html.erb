@@ -1,6 +1,7 @@
 <% @suppliers.each do |supplier| %>
-    <div class="supplier">
-      <p class="supplier-name"><%= supplier.name %></p>
-      <p class="supplier-address"><%= supplier.address %></p>
-    </div>
+  <ul>
+    <li>
+      <%= link_to supplier.name, supplier_path(supplier) %>
+    </li>
+  </ul>
 <% end %>
