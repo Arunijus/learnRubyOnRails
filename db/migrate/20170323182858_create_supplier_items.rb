@@ -3,6 +3,7 @@ class CreateSupplierItems < ActiveRecord::Migration[5.0]
     create_table :supplier_items do |t|
       t.string :ean
       t.text :description
+      t.references :supplier
       t.timestamps
     end
   end

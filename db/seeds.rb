@@ -9,5 +9,6 @@
 s1 = Supplier.create(name: "SPC", address: "Kaunas")
 s2 = Supplier.create(name: "Rautakesko", address: "Latvia")
 
-si1 = SupplierItem.create(ean: "1234567890123", description: "Very nice supplier item")
-si2 = SupplierItem.create(ean: "1234567890124", description: "Not nice supplier item")
+SupplierItem.create(ean: "1234567890123", description: "Very nice supplier item", supplier_id: s1.id)
+SupplierItem.create(ean: "1234567890124", description: "Not nice supplier item", supplier_id: s1.id)
+SupplierItem.create(ean: "1234567890125", description: "Just item", supplier_id: s2.id)
