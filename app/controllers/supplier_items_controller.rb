@@ -8,6 +8,6 @@ class SupplierItemsController < ApplicationController
 
   private
   def supplier_item_params
-    params.require(:supplier_item).permit(:ean, :description)
+    params.require(:supplier_item).permit(:ean, :description, :purchase_price, :sales_price, :vat)
   end
 end
