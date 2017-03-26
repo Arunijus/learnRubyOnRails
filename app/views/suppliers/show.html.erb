@@ -9,6 +9,7 @@
       <th style="text-align: left;">Purchase price</th>
       <th style="text-align: left;">Sales price</th>
       <th style="text-align: left;">Vat</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@
         <td><%= si.purchase_price %></td>
         <td><%= si.sales_price %></td>
         <td><%= si.vat %>%</td>
+        <td><%= button_to 'Delete', delete_supplier_item_path(si), method: :post %></td>
       </tr>
     <% end %>
   </tbody>

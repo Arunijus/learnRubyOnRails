@@ -22,6 +22,13 @@ class SuppliersController < ApplicationController
     end
   end
 
+  def soft_delete
+    @supplier = Supplier.find(params[:id])
+    @supplier.update_attribute(:deleted_at, Time.current)
+
+    redirect_to(:action => 'index')
+  end
+
   private
     def supplier_params
       params.require(:supplier).permit(:name, :address)
