@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <header>
+      <h2>Learning RoR</h2>
+      <p>
+        <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+        |
+        <%= link_to_unless I18n.locale == :de, "Lietuvių", locale: :lt %>
+      </p>
+      <hr>
+    </header>
     <%= yield %>
   </body>
 </html>

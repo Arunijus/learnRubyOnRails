@@ -1,12 +1,12 @@
-<h3>Suppliers</h3>
+<h3><%= t('suppliers') %></h3>
 <ol>
   <% @suppliers.each do |supplier| %>
       <li>
         <div style="display: inline-block;"><%= link_to supplier.name, supplier_path(supplier) %></div>
-        <div style="display: inline-block;"><%= button_to 'Delete', delete_supplier_path(supplier), method: :post %></div>
+        <div style="display: inline-block;"><%= button_to t('delete'), delete_supplier_path(supplier), method: :post %></div>
       </li>
       <br>
   <% end %>
 </ol>
 <br>
-<%= link_to "Create new supplier", new_supplier_path %>
+<%= link_to t('create_new_supplier'), new_supplier_path %>

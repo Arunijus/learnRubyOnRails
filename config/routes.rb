@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/suppliers' => 'suppliers#index'
+  scope "(:locale)", :locale => /en|lt/ do
+    root :to => 'suppliers#index'
+    get '/suppliers' => 'suppliers#index', as: :suppliers
+  end
+
   get '/suppliers/show/:id' => 'suppliers#show', as: :supplier
   get '/suppliers/new' => 'suppliers#new', as: :new_supplier
 

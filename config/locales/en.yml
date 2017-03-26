@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  delete: "Delete"
+  create: "Create"
+  create_new_supplier: "Create new supplier"
+  address: "Address"
+  items: "Items"
+  ean: "Ean"
+  description: "Description"
+  purchase_price: "Purchase price"
+  sales_price: "Sales price"
+  vat: "Vat"
+  actions: "Actions"
+  add_a_supplier_item: "Add a supplier item"
+  suppliers: "Suppliers"
+  name: "Name"
+  back: "Back"
