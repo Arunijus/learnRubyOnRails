@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  delete: "Delete"
+  create: "Create"
+  create_new_supplier: "Create new supplier"
+  address: "Address"
+  items: "Items"
+  ean: "Ean"
+  description: "Description"
+  purchase_price: "Purchase price"
+  sales_price: "Sales price"
+  vat: "VAT"
+  actions: "Actions"
+  add_a_supplier_item: "Add a supplier item"
+  suppliers: "Suppliers"
+  name: "Name"
+  back: "Back"
+  edit: "Edit"
+  save: "Save"
+  error_supplier_cannot_be_deleted: "This supplier cannot be deleted because it has supplier items."

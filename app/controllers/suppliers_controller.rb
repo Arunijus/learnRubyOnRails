@@ -5,7 +5,7 @@ class SuppliersController < ApplicationController
 
   def show
     @supplier = Supplier.find(params[:id])
-    @supplier_items = @supplier.supplier_items
+    @supplier_item = SupplierItem.new
   end
 
   def new
@@ -20,6 +20,18 @@ class SuppliersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def soft_delete
+    @supplier = Supplier.find(params[:id])
+
+    if @supplier.supplier_items.exists?
+      flash[:error] = "This supplier cannot be deleted because it has supplier items."
+    else
+      @supplier.update_attribute(:deleted_at, Time.current)
+    end
+
+    redirect_to(:action => 'index')
   end
 
   private

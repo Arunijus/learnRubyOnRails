@@ -1,12 +1,12 @@
-<h3>Create new supplier</h3>
+<h3><%= t('create_new_supplier') %></h3>
 <%= form_for(@supplier) do |f| %>
     <p>
-      <%= f.label :name %><br>
+      <%= f.label t('name') %><br>
       <%= f.text_field :name %>
     </p>
     <p>
-      <%= f.label :address %><br>
+      <%= f.label t('address') %><br>
       <%= f.text_field :address %>
     </p>
-    <%= f.submit "Create", :class => "btn" %>
+    <%= f.submit t('create'), :class => "btn" %>
 <% end %>
