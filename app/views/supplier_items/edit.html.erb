@@ -1,6 +1,6 @@
 <h3>Edit supplier item</h3>
 
-<%= form_for :supplier_item, url: update_supplier_item_path(@supplier_item), method: :post do |f| %>
+<%= form_for @supplier_item, url: update_supplier_item_path(@supplier_item), method: :post do |f| %>
     <% if @supplier_item.errors.any? %>
         <div id="error_explanation">
           <ul>

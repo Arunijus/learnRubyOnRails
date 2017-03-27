@@ -14,25 +14,36 @@
     </tr>
   </thead>
   <tbody>
-    <% @supplier_items.each do |si| %>
-      <tr>
-        <td><%= si.ean %></td>
-        <td><%= si.description %></td>
-        <td><%= si.purchase_price %></td>
-        <td><%= si.sales_price %></td>
-        <td><%= si.vat %>%</td>
-        <td>
-          <%= button_to t('edit'), edit_supplier_item_path(si), method: :get %>
-          <%= button_to t('delete'), delete_supplier_item_path(si), method: :post %>
-        </td>
-      </tr>
+    <% @supplier.supplier_items.each do |si| %>
+      <% if si.id %>
+        <tr>
+          <td><%= si.ean %></td>
+          <td><%= si.description %></td>
+          <td><%= si.purchase_price %></td>
+          <td><%= si.sales_price %></td>
+          <td><%= si.vat %>%</td>
+          <td>
+            <%= button_to t('edit'), edit_supplier_item_path(si), method: :get %>
+            <%= button_to t('delete'), delete_supplier_item_path(si), method: :post %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 <br>
 <hr>
 <h3><%= t('add_a_supplier_item') %>:</h3>
-<%= form_for([@supplier, @supplier.supplier_items.build]) do |f| %>
+<%= form_for @supplier_item, url: create_supplier_item_path(@supplier), method: :post do |f| %>
+    <% if @supplier_item.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @supplier_item.errors.full_messages.each do |msg| %>
+                <li style="color: red;"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <p>
       <%= f.label t('ean') %><br>
       <%= f.text_field :ean %>

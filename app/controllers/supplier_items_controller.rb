@@ -1,11 +1,12 @@
 class SupplierItemsController < ApplicationController
   def create
     @supplier = Supplier.find(params[:supplier_id])
+    @supplier_item = @supplier.supplier_items.build(supplier_item_params)
 
-    if @supplier.supplier_items.create(supplier_item_params)
+    if @supplier_item.save
       redirect_to supplier_path(@supplier)
     else
-      render 'suppliers/show'
+      render 'suppliers/show', id: params[:supplier_id]
     end
   end
 
