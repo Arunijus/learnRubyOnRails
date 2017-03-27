@@ -29,7 +29,7 @@ en:
   description: "Description"
   purchase_price: "Purchase price"
   sales_price: "Sales price"
-  vat: "Vat"
+  vat: "VAT"
   actions: "Actions"
   add_a_supplier_item: "Add a supplier item"
   suppliers: "Suppliers"
