@@ -17,6 +17,9 @@
         <%= link_to_unless I18n.locale == :de, "Lietuvių", locale: :lt %>
       </p>
       <hr>
+      <% flash.each do |k, v| %>
+          <p id="<%= k %>" style="color: red;"><%= v %></p>
+      <% end %>
     </header>
     <%= yield %>
   </body>

@@ -35,3 +35,6 @@ en:
   suppliers: "Suppliers"
   name: "Name"
   back: "Back"
+  edit: "Edit"
+  save: "Save"
+  error_supplier_cannot_be_deleted: "This supplier cannot be deleted because it has supplier items."

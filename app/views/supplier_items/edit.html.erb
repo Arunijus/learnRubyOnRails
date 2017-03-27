@@ -1,0 +1,39 @@
+<h3>Edit supplier item</h3>
+
+<%= form_for :supplier_item, url: update_supplier_item_path(@supplier_item), method: :post do |f| %>
+    <% if @supplier_item.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @supplier_item.errors.full_messages.each do |msg| %>
+                <li style="color: red;"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label t('ean') %><br>
+      <%= f.text_field :ean %>
+    </p>
+    <p>
+      <%= f.label t('description') %><br>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.label t('purchase_price') %><br>
+      <%= f.number_field :purchase_price %>
+    </p>
+    <p>
+      <%= f.label t('sales_price') %><br>
+      <%= f.number_field :sales_price %>
+    </p>
+    <p>
+      <%= f.label t('vat') %><br>
+      <%= f.select(:vat, options_for_select([['21%', 21], ['9%', 9]])) %>
+    </p>
+    <p>
+      <%= f.submit t('save') %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', supplier_path(@supplier_item.supplier) %>

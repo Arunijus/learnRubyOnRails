@@ -24,7 +24,12 @@ class SuppliersController < ApplicationController
 
   def soft_delete
     @supplier = Supplier.find(params[:id])
-    @supplier.update_attribute(:deleted_at, Time.current)
+
+    if @supplier.supplier_items.exists?
+      flash[:error] = "This supplier cannot be deleted because it has supplier items."
+    else
+      @supplier.update_attribute(:deleted_at, Time.current)
+    end
 
     redirect_to(:action => 'index')
   end

@@ -14,3 +14,6 @@ lt:
   suppliers: "Tiekėjai"
   name: "Pavadinimas"
   back: "Grįžti atgal"
+  edit: "Redaguoti"
+  save: "Išsaugoti"
+  error_supplier_cannot_be_deleted: "Tiekėjas negali būti ištrintas, nes jis turi prekių."
